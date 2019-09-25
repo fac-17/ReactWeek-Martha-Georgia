@@ -1,5 +1,6 @@
 import React from "react";
 import QuizQuesAns from "./components/QuizQuesAns";
+import Dropdown from './components/Dropdown'
 // import './App.css';
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <div>
       <header> Quiz </header>
 
-      <QuizQuesAns category="20" />
+      <QuizQuesAns category="20" /><Dropdown/>
     </div>
   );
 }
