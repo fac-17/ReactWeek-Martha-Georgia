@@ -1,8 +1,14 @@
 import React from "react";
 
-const Dropdown = () => {
-  const [category, setCategory] = React.useState(null);
-  // React.useEffect(() => {});
+const Dropdown = ({category, setCategory}) => {
+
+  console.log(category);
+  React.useEffect(()=> {
+    const updateCategory = (event) => setCategory(event.target.value);
+    const dropdown= document.querySelector("#Dropdown");
+    dropdown.addEventListener('change', updateCategory);
+    return() => dropdown.removeEventListener('change', updateCategory);
+  }, [])
   return (
     <div>
     <label htmlFor="Dropdown">Select a catergory to get started

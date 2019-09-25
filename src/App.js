@@ -4,11 +4,13 @@ import Dropdown from './components/Dropdown'
 // import './App.css';
 
 function App() {
+  const [category, setCategory] = React.useState(9);
+
   return (
     <div>
       <header> Quiz </header>
 
-      <QuizQuesAns category="20" /><Dropdown/>
+      <QuizQuesAns category={category}/><Dropdown category={category} setCategory={setCategory}/>
     </div>
   );
 }
