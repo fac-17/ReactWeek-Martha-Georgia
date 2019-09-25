@@ -1,6 +1,6 @@
 import React from "react";
 import QuizQuesAns from "./components/QuizQuesAns";
-import Dropdown from './components/Dropdown'
+import Dropdown from "./components/Dropdown";
 // import './App.css';
 
 function App() {
@@ -10,7 +10,8 @@ function App() {
     <div>
       <header> Quiz </header>
 
-      <QuizQuesAns category={category}/><Dropdown category={category} setCategory={setCategory}/>
+      <QuizQuesAns category={category} />
+      <Dropdown category={category} setCategory={setCategory} />
     </div>
   );
 }
