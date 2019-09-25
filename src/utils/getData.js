@@ -1,5 +1,6 @@
-function getData (category) {
-  return Window
+function getData () {
+
+  return window
   .fetch(`https://opentdb.com/api.php?amount=12&category=10&type=multiple`)
   .then(res => {
     if(!res.ok) throw new Error ("HTTP error");
@@ -9,5 +10,4 @@ function getData (category) {
   .then(res => res.json());
 }
 
-module.exports = { getData };
-https://opentdb.com/api.php?amount=12&category=10&type=multiple
+export default getData;
