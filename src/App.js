@@ -10,7 +10,7 @@ function App() {
   const [username, setUsername] = React.useState("Username");
   const [score, setScore] = React.useState(0);
   const [category, setCategory] = React.useState(9);
-  const [button, setButton] = React.useState(button);
+  const [button, setButton] = React.useState("");
   return (
     <div>
       <header> Quiz </header>
