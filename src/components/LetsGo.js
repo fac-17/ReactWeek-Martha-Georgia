@@ -16,8 +16,8 @@ const LetsGo = ({ page, setPage, username, setUsername }) => {
   }, []);
 
   return (
-    <form>
-      <input className="usernameInput" type="text" />
+    <form className="lets-go-form">
+      <input placeholder="Enter a username" className="usernameInput" type="text" />
       <button className="letsGoButton">Let's Go</button>
     </form>
   );

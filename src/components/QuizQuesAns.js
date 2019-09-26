@@ -28,39 +28,45 @@ const QuizQuesAns = ({ category, score, setScore }) => {
 
   return (
     <div>
-      <span>{question}</span>
-      {newAnswerArray.map(answer => (
+      <span className="currentQuestion">{question}</span>
+      <div className="answer-options-container">
+        {newAnswerArray.map(answer => (
+          <button
+            onClick={() => {
+              if (correctAnswer === answer) {
+                setScore(score + 1);
+              }
+            }}
+            value={answer}
+            className="answer-options"
+            key={answer}
+          >
+            {answer}
+          </button> // ternary here
+        ))}
+      </div>
+      <div className="button-container">
         <button
+          className="next-button"
           onClick={() => {
-            if (correctAnswer === answer) {
-              setScore(score + 1);
+            if (index < 15) {
+              setIndex(index + 1);
             }
           }}
-          value={answer}
-          className="answer-options"
-          key={answer}
         >
-          {answer}
-        </button> // ternary here
-      ))}
-      <button
-        onClick={() => {
-          if (index < 15) {
-            setIndex(index + 1);
-          }
-        }}
-      >
-        Next
-      </button>
-      <button
-        onClick={() => {
-          if (index < 15) {
-            setIndex(index + 1);
-          }
-        }}
-      >
-        Skip
-      </button>
+          Next
+        </button>
+        <button
+          className="skip-button"
+          onClick={() => {
+            if (index < 15) {
+              setIndex(index + 1);
+            }
+          }}
+        >
+          Skip
+        </button>
+      </div>
     </div>
   );
 };
