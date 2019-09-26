@@ -1,7 +1,7 @@
 import React from "react";
 import QuizQuesAns from "./components/QuizQuesAns";
-import Dropdown from "./components/Dropdown";import UsernameScore from "./components/usernameScore";
-
+import Dropdown from "./components/Dropdown";
+import UsernameScore from "./components/usernameScore";
 import LetsGo from "./components/LetsGo";
 
 // import './App.css';
