@@ -18,26 +18,28 @@ const QuizQuesAns = ({ category, score, setScore }) => {
   let question = data.results[index].question;
   let correctAnswer = data.results[index].correct_answer;
   let incorrectAnswers = data.results[index].incorrect_answers;
-  incorrectAnswers.push(correctAnswer);
+  let newAnswerArray = [...incorrectAnswers];
+  newAnswerArray.push(correctAnswer);
   const randomise = array => {
     array.sort(() => Math.random() - 0.5);
   };
-  randomise(incorrectAnswers);
+  randomise(newAnswerArray);
+  console.log("this is correct", correctAnswer);
 
   return (
     <div>
       <span>{question}</span>
-      <button
-        value={correctAnswer}
-        onClick={() => {
-          setScore(score + 1);
-        }}
-        className="answer-options"
-      >
-        {correctAnswer}
-      </button>
-      {incorrectAnswers.map(answer => (
-        <button value={answer} className="answer-options" key={answer}>
+      {newAnswerArray.map(answer => (
+        <button
+          onClick={() => {
+            if (correctAnswer === answer) {
+              setScore(score + 1);
+            }
+          }}
+          value={answer}
+          className="answer-options"
+          key={answer}
+        >
           {answer}
         </button> // ternary here
       ))}
