@@ -17,6 +17,10 @@ const QuizQuesAns = ({ category }) => {
   return (
     <div>
       <span> {data.results[0].question} </span>
+      <span>
+        {data.results[0].correct_answer}
+        {data.results[0].incorrect_answers}
+      </span>
     </div>
   );
 };
