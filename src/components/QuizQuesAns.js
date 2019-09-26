@@ -22,7 +22,7 @@ const QuizQuesAns = ({ category }) => {
       <span>{question}</span>
         <button>{correctAnswer}</button>
         {incorrectAnswers.map(answer => (
-          <button>{answer}</button>
+          <button key={answer}>{answer}</button>
         ))}
       <button>Select answer</button>
       <button>Skip</button>
