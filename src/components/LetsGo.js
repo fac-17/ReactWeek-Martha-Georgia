@@ -1,17 +1,16 @@
 import React from "react";
 
-const LetsGo = () => {
-  // React.useEffect(() => {
-  // //   const handleClick = event =>
-  // //   const letsGoButton = document.querySelector(".letsGoButton");
-  // //   letsGoButton.addEventListener("change", clickLetsGoButton);
-  // // }, []);
+const LetsGo = ({ page, setPage }) => {
+  React.useEffect(() => {
+    const updatePage = event => setPage("gamePage");
+    const letsGoButton = document.querySelector(".letsGoButton");
+    letsGoButton.addEventListener("click", updatePage);
+    return () => letsGoButton.removeEventListener("click", updatePage);
+  }, []);
   return (
     <div>
-      <input type="text"/>
-      <button className="letsGoButton" onClick="handleClick">
-        Let's go!
-      </button>
+      <input type="text" />
+      <button className="letsGoButton">Let's Go</button>
     </div>
   );
 };
