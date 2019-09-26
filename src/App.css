@@ -1,12 +1,22 @@
+
+body{
+  background-color: blue;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  font-size: 1em;
+}
 .App {
   text-align: center;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
-}
+} */
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -15,8 +25,73 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+} */
+
+/* .App-link {
+  color: #09d3ac;
+} */
+
+.dropdown-container{
+display:flex;
+flex-direction: column;
+height: 20vh;
+justify-content: space-evenly;
 }
 
-.App-link {
-  color: #09d3ac;
+.dropdown{
+  height: 5vh;
+  font-size: 1em;
+}
+
+.dropdown-label{
+  font-size: 1.5em;
+}
+.username-score-container{
+  margin: 0.5em;
+  border-radius: 1em;
+  border: solid black 1px;
+position: absolute;
+top: 0;
+right: 0;
+padding: 1.5em;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+.username {
+font-size: 1em;
+padding: 1em;
+}
+
+.score {
+  font-size: 1em;
+}
+.lets-go-form{
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  justify-content: space-evenly;
+
+}
+.usernameInput{
+  align-self:center;
+  width: 20em;
+  height: 4vh;
+  border-radius: 1em;
+  padding-top: 0;
+  font-size: 0.6em;
+  color: black;
+}
+.letsGoButton{
+  width: 15em;
+  align-self: center;
+    height: 4vh;
+    border-radius: 1em;
+}
+.heading{
+  align-self: center;
+
+  margin-bottom: 1.5em;
+  font-size: 3em;
 }

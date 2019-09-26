@@ -3,7 +3,7 @@ import QuizQuesAns from "./components/QuizQuesAns";
 import Dropdown from "./components/Dropdown";
 import UsernameScore from "./components/usernameScore";
 import LetsGo from "./components/LetsGo";
-
+import app from "./App.css";
 
 function App() {
   const [username, setUsername] = React.useState("Username");
@@ -14,12 +14,14 @@ function App() {
 
   return (
     <div>
-      <header> Quiz </header>
+    <UsernameScore score={score} username={username} />
+
+      <header className="heading"> Quiz </header>
       {page === "landingPage" && (
         <div>
           <Dropdown category={category} setCategory={setCategory} />
 
-          <UsernameScore score={score} username={username} />
+
 
           <LetsGo
             button={button}

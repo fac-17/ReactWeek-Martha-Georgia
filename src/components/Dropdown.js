@@ -9,10 +9,10 @@ const Dropdown = ({ category, setCategory }) => {
     return () => dropdown.removeEventListener("change", updateCategory);
   }, []);
   return (
-    <div>
-      <label htmlFor="Dropdown">
-        Select a catergory to get started
-        <select id="Dropdown">
+    <div className="dropdown-container">
+      <label htmlFor="Dropdown" class="dropdown-label">
+       Select a catergory to get started </label>
+        <select id="Dropdown" className="dropdown">
           <option value="9">General Knowledge</option>
           <option value="10">Books</option>
           <option value="11">Film</option>
@@ -29,7 +29,7 @@ const Dropdown = ({ category, setCategory }) => {
           <option value="24">Politics</option>
           <option value="26">Celebrities</option>
         </select>
-      </label>
+
     </div>
   );
 };
