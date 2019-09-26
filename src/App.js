@@ -14,14 +14,12 @@ function App() {
 
   return (
     <div>
-    <UsernameScore score={score} username={username} />
+      <UsernameScore score={score} username={username} />
 
-      <header className="heading"> Quiz </header>
+      <header className="heading"> K o o l Q u i z </header>
       {page === "landingPage" && (
         <div>
           <Dropdown category={category} setCategory={setCategory} />
-
-
 
           <LetsGo
             button={button}
