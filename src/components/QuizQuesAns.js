@@ -14,13 +14,18 @@ const QuizQuesAns = ({ category }) => {
   );
   console.log(data);
   if (!data) return <div> Loading...</div>;
+  let question = data.results[0].question;
+  let correctAnswer = data.results[0].correct_answer;
+  let incorrectAnswers = data.results[0].incorrect_answers;
   return (
     <div>
-      <span> {data.results[0].question} </span>
-      <span>
-        {data.results[0].correct_answer}
-        {data.results[0].incorrect_answers}
-      </span>
+      <span>{question}</span>
+        <button>{correctAnswer}</button>
+        {incorrectAnswers.map(answer => (
+          <button>{answer}</button>
+        ))}
+      <button>Select answer</button>
+      <button>Skip</button>
     </div>
   );
 };
