@@ -3,6 +3,7 @@ import getData from "../utils/getData";
 
 const QuizQuesAns = ({ category, score, setScore }) => {
   const [data, setData] = React.useState(null);
+  const [index, setIndex] = React.useState(0);
 
   React.useEffect(
     () => {
@@ -13,11 +14,10 @@ const QuizQuesAns = ({ category, score, setScore }) => {
     [category]
   );
 
-
   if (!data) return <div> Loading...</div>;
-  let question = data.results[0].question;
-  let correctAnswer = data.results[0].correct_answer;
-  let incorrectAnswers = data.results[0].incorrect_answers;
+  let question = data.results[index].question;
+  let correctAnswer = data.results[index].correct_answer;
+  let incorrectAnswers = data.results[index].incorrect_answers;
   return (
     <div>
       <span>{question}</span>
@@ -35,7 +35,15 @@ const QuizQuesAns = ({ category, score, setScore }) => {
           {answer}
         </button>
       ))}
-      <button>Select answer</button>
+      <button
+        onClick={() => {
+          if (index < 15) {
+            setIndex(index + 1);
+          }
+        }}
+      >
+        Next
+      </button>
       <button>Skip</button>
     </div>
   );
