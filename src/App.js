@@ -4,7 +4,6 @@ import Dropdown from "./components/Dropdown";
 import UsernameScore from "./components/usernameScore";
 import LetsGo from "./components/LetsGo";
 
-// import './App.css';
 
 function App() {
   const [username, setUsername] = React.useState("Username");
@@ -34,7 +33,7 @@ function App() {
       )}
       {page === "gamePage" && (
         <div>
-          <QuizQuesAns category={category} />
+          <QuizQuesAns category={category} score={score} setScore={setScore} />
           <UsernameScore score={score} username={username} />
         </div>
       )}
