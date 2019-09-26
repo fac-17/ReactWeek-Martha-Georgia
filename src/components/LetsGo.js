@@ -8,10 +8,10 @@ const LetsGo = ({ page, setPage }) => {
     return () => letsGoButton.removeEventListener("click", updatePage);
   }, []);
   return (
-    <div>
+    <form>
       <input type="text" />
       <button className="letsGoButton">Let's Go</button>
-    </div>
+    </form>
   );
 };
 
