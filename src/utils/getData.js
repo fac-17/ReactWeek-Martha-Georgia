@@ -1,7 +1,7 @@
 function getData(category) {
   return window
     .fetch(
-      `https://opentdb.com/api.php?amount=12&category=${category}&type=multiple`
+      `https://opentdb.com/api.php?amount=15&category=${category}&type=multiple`
     )
     .then(res => {
       if (!res.ok) throw new Error("HTTP error");
