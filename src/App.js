@@ -27,6 +27,8 @@ function App() {
             setButton={setButton}
             page={page}
             setPage={setPage}
+            username={username}
+            setUsername={setUsername}
           />
         </div>
       )}
@@ -36,7 +38,6 @@ function App() {
           <UsernameScore score={score} username={username} />
         </div>
       )}
-      ;
     </div>
   );
 }
