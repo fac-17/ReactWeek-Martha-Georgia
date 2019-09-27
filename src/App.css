@@ -124,7 +124,7 @@ button:hover {
 }
 
 .currentQuestion {
-  margin: 2em;
+  margin: 2em 0;
   font-size: 2em;
 }
 
