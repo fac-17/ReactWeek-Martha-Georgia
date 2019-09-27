@@ -1,5 +1,6 @@
 import React from "react";
 import getData from "../utils/getData";
+import Shuffle from "./Shuffle";
 
 const QuizQuesAns = ({ category, score, setScore }) => {
   const [data, setData] = React.useState(null);
@@ -16,35 +17,11 @@ const QuizQuesAns = ({ category, score, setScore }) => {
   console.log("this is data", data);
   if (!data) return <div> Loading...</div>;
   let question = data.results[index].question;
-  let correctAnswer = data.results[index].correct_answer;
-  let incorrectAnswers = data.results[index].incorrect_answers;
-  let newAnswerArray = [...incorrectAnswers];
-  newAnswerArray.push(correctAnswer);
-  const randomise = array => {
-    array.sort(() => Math.random() - 0.5);
-  };
-  randomise(newAnswerArray);
-  console.log("this is correct", correctAnswer);
 
   return (
     <div>
       <span className="currentQuestion">{question}</span>
-      <div className="answer-options-container">
-        {newAnswerArray.map(answer => (
-          <button
-            onClick={() => {
-              if (correctAnswer === answer) {
-                setScore(score + 1);
-              }
-            }}
-            value={answer}
-            className="answer-options"
-            key={answer}
-          >
-            {answer}
-          </button> // ternary here
-        ))}
-      </div>
+      <Shuffle data={data} index={index} score={score} setScore={setScore} />
       <div className="button-container">
         <button
           className="next-button"
