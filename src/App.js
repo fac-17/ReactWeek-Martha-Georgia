@@ -6,6 +6,7 @@ import LetsGo from "./components/LetsGo";
 import app from "./App.css";
 import EndofGame from './components/EndofGame';
 function App() {
+  const [hasChosenAnswer, setHasChosenAnswer] = React.useState('false');
   const [username, setUsername] = React.useState("Username");
   const [score, setScore] = React.useState(0);
   const [category, setCategory] = React.useState(9);
@@ -33,7 +34,7 @@ function App() {
       )}
       {page === "gamePage" && (
         <div>
-          <QuizQuesAns category={category} score={score} setScore={setScore} setPage={setPage} />
+          <QuizQuesAns category={category} score={score} setScore={setScore} setPage={setPage} hasChosenAnswer={hasChosenAnswer} setHasChosenAnswer={setHasChosenAnswer} />
           <UsernameScore score={score} username={username} />
         </div>
       )}

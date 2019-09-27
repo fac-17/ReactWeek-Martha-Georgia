@@ -1,7 +1,8 @@
 import React from "react";
 import QuizQuesAns from "./QuizQuesAns";
 
-const Shuffle = ({ data, index, score, setScore }) => {
+const Shuffle = ({ data, index, score, setScore, hasChosenAnswer, setHasChosenAnswer }) => {
+
   let correctAnswer = data.results[index].correct_answer;
   let incorrectAnswers = data.results[index].incorrect_answers;
   let newAnswerArray = [...incorrectAnswers];
@@ -21,10 +22,12 @@ const Shuffle = ({ data, index, score, setScore }) => {
       {shuffledArray.map(answer => (
         <button
           onClick={() => {
+            setHasChosenAnswer('true');
             if (correctAnswer === answer) {
               setScore(score + 1);
             }
           }}
+          disabled={hasChosenAnswer === 'true' ? true : false}
           value={answer}
           className="answer-options"
           key={answer}
