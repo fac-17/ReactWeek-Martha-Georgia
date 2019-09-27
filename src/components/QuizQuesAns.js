@@ -2,7 +2,7 @@ import React from "react";
 import getData from "../utils/getData";
 import Shuffle from "./Shuffle";
 
-const QuizQuesAns = ({ category, score, setScore }) => {
+const QuizQuesAns = ({ category, score, setScore, setPage }) => {
   const [data, setData] = React.useState(null);
   const [index, setIndex] = React.useState(0);
 
@@ -28,6 +28,8 @@ const QuizQuesAns = ({ category, score, setScore }) => {
           onClick={() => {
             if (index < 14) {
               setIndex(index + 1);
+            } else {
+              setPage("endGamePage");
             }
           }}
         >
@@ -38,6 +40,8 @@ const QuizQuesAns = ({ category, score, setScore }) => {
           onClick={() => {
             if (index < 14) {
               setIndex(index + 1);
+            }else {
+              setPage("endGamePage");
             }
           }}
         >
