@@ -1,8 +1,14 @@
 import React from "react";
 import QuizQuesAns from "./QuizQuesAns";
 
-const Shuffle = ({ data, index, score, setScore, hasChosenAnswer, setHasChosenAnswer }) => {
-
+const Shuffle = ({
+  data,
+  index,
+  score,
+  setScore,
+  hasChosenAnswer,
+  setHasChosenAnswer
+}) => {
   let correctAnswer = data.results[index].correct_answer;
   let incorrectAnswers = data.results[index].incorrect_answers;
   let newAnswerArray = [...incorrectAnswers];
@@ -21,19 +27,22 @@ const Shuffle = ({ data, index, score, setScore, hasChosenAnswer, setHasChosenAn
     <div className="answer-options-container">
       {shuffledArray.map(answer => (
         <button
+          dangerouslySetInnerHTML={{ __html: answer }}
           onClick={() => {
-            setHasChosenAnswer('true');
+            setHasChosenAnswer("true");
             if (correctAnswer === answer) {
               setScore(score + 1);
             }
           }}
-          disabled={hasChosenAnswer === 'true' ? true : false}
+          disabled={hasChosenAnswer === "true" ? true : false}
           value={answer}
-          className={answer === correctAnswer ? "answer-options-correct" : "answer-options-incorrect"}
+          className={
+            answer === correctAnswer
+              ? "answer-options-correct"
+              : "answer-options-incorrect"
+          }
           key={answer}
-        >
-          {answer}
-        </button> // ternary here
+        /> // ternary here
       ))}
     </div>
   );
