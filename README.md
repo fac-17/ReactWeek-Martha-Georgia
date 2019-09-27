@@ -22,3 +22,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Use some nice SVGSSSS/animation
 
 
+## Created using Open Database Trivia API 
+https://opentdb.com/api_config.php 
