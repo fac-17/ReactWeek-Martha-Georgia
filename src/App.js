@@ -17,7 +17,7 @@ function App() {
     <div>
       <UsernameScore score={score} username={username} />
 
-      <header className="heading"> K o o l Q u i z </header>
+      <header className="heading"> K o o l K w i z </header>
       {page === "landingPage" && (
         <div>
           <Dropdown category={category} setCategory={setCategory} />

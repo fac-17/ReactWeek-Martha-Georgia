@@ -136,19 +136,44 @@ button:hover {
   margin: 3em 0;
 }
 
-.answer-options {
+/* .answer-options {
   width: 40%;
   padding: 1em;
   margin: 0.5em;
   border-radius: 1em;
-}
+} */
 
 .answer-options:hover {
   transform: translateY(-3px);
 }
 
-.answer-options:focus {
+/* .answer-options:focus {
   background-color: #0a8754;
+} */
+
+.answer-options-correct,
+.answer-options-incorrect{
+  width: 40%;
+  padding: 1em;
+  margin: 0.5em;
+  border-radius: 1em;
+}
+.answer-options-correct:disabled{
+    background-color: #0a8754;
+    color: white;
+}
+
+.answer-options-incorrect:disabled{
+    background-color: #FF4C4C;
+    color:white;
+}
+.Back-start-button{
+  width: 40%;
+  padding: 1em;
+  margin: 0.5em;
+  border-radius: 1em;
+  background-color: #ef476f;
+
 }
 
 .button-container {

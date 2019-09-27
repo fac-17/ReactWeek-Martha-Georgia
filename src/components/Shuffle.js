@@ -29,7 +29,7 @@ const Shuffle = ({ data, index, score, setScore, hasChosenAnswer, setHasChosenAn
           }}
           disabled={hasChosenAnswer === 'true' ? true : false}
           value={answer}
-          className="answer-options"
+          className={answer === correctAnswer ? "answer-options-correct" : "answer-options-incorrect"}
           key={answer}
         >
           {answer}
