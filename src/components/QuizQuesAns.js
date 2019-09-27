@@ -26,7 +26,7 @@ const QuizQuesAns = ({ category, score, setScore }) => {
         <button
           className="next-button"
           onClick={() => {
-            if (index < 15) {
+            if (index < 14) {
               setIndex(index + 1);
             }
           }}
@@ -36,7 +36,7 @@ const QuizQuesAns = ({ category, score, setScore }) => {
         <button
           className="skip-button"
           onClick={() => {
-            if (index < 15) {
+            if (index < 14) {
               setIndex(index + 1);
             }
           }}
